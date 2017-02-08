@@ -1,0 +1,7 @@
+Try to submit merged ALS_merged and SGD on Kaggle.
+Put report in the main project directory.
+Write README.md file for main directory including description of the project.
+Write run.py if SGD improves the score, otherwise use the one for ALS. Remember that run.py must take reasonable time to compute the values. Mine take about 15 minutes. State it clearly in the README.md file.
+In the zip file exclude all the *.csv files.
+Finally zip all files.
+Submit it here: https://cmt3.research.microsoft.com/EPFML2016

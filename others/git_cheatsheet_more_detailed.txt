@@ -1,0 +1,65 @@
+# CLONING THE REPO
+
+# First we start with cloning the repository
+$ git clone <repo_url>
+
+# We need to move to the directory containing ".git" directory (it is a hidden file on unix-like systems); in our case it would be PCML_Project_2
+$ cd PCML_Project_2
+
+
+
+# WORKING WITH GIT
+
+# To see the state-of-art on our local copy
+$ git status
+
+# To prepare files to commit
+$ git add --all
+
+# To commit the changes (you may add some labels like [ADD] or [UPDATE] in the beginning of the message
+$ git commit -m "<comment/message>"
+
+# (safe way) To update the local master branch with the remote (server) one
+$ git fetch
+# If no conflicts you can omit the previous command and download the changes
+$ git pull origin master
+
+# To upload the changes done to your local master branch into server
+$ git push origin master
+
+# Remember strategy: add => commit => pull => push
+
+# Sometimes you may want to drop your changes instead of commiting them (it will also delete untracked files - the files that weren't added)
+$ git stash -u
+
+# You may also want to revert the changes done to one particular file
+$ git checkout -- <name_of_the_file>
+
+
+
+# WORKING ON BRANCHES
+
+# To create a new branch and switch to it
+$ git checkout -b <name_of_new_branch>
+
+# To switch to another branch (possible only if you commited your changes)
+$ git checkout <name_of_existing_branch>
+
+# To upload the branch to server (details: http://stackoverflow.com/a/1519032)
+git push origin <name_of_local_branch>
+
+# To fetch/pull all the changes from all the branches (reference: http://stackoverflow.com/a/10312587)
+$ git fetch --all
+(only once) $ git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
+$ git pull --all
+
+# To merge your branch with master (more info: http://stackoverflow.com/a/5602109)
+git checkout master
+git pull origin master
+git merge <name_of_your_branch>
+git push origin master
+
+
+# To delete the branch both remotely and locally where <name_of_the_remote_branch> according to the previous commands should be equal to <name_of_the_local_branch>
+$ git push origin --delete <name_of_the_remote_branch>
+$ git branch -d <name_of_the_local_branch>

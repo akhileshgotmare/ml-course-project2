@@ -1,0 +1,22 @@
+20161220_171018 submission
+
+init_method_num = 2
+num_epochs = 28
+cutoff = False
+max_iter_threshold = 0.00005
+num_features = 10
+lambda_item = 20
+lambda_user = 30
+split_ratio = 1.0
+
+
+
+20161220_175252 submission
+init_method_num = 3
+num_epochs = 5
+cutoff = False
+max_iter_threshold = 0.00005
+num_features = 10
+lambda_item = 20
+lambda_user = 30
+split_ratio = 1.0
